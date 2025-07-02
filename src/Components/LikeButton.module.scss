@@ -1,0 +1,23 @@
+.like_btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.heart_icon {
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+  filter: drop-shadow(0 0 1px black);
+}
+
+.liked {
+  color: #ff3366;
+}

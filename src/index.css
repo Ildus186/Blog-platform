@@ -1,0 +1,42 @@
+@font-face {
+  font-family: InterUI;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Fonts/Inter-Medium.woff2) format("woff2");
+}
+
+:root {
+  font-family: InterUI, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: rgb(235, 238, 243);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #c1ff64;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: InterUI;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.1;
+}

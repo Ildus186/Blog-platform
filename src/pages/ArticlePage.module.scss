@@ -1,0 +1,120 @@
+.articleBox {
+  width: 938px;
+  height: 140px;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 15px 0 0 19px;
+  font-family: InterUI;
+  position: relative;
+}
+
+.articleList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: center;
+  padding: 0;
+  margin-top: 26px;
+  margin-bottom: 40px;
+}
+
+.titleBox {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.title {
+  color: rgb(24, 144, 255);
+  font-family: Inter UI;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 5px;
+  &:hover {
+    color: rgb(36, 100, 156);
+  }
+}
+
+.likeButton {
+  background-color: inherit;
+  border: none;
+  padding-right: 0;
+}
+
+.like {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 12px;
+}
+
+.tagsBox {
+  display: flex;
+  gap: 5px;
+}
+
+.tag {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  display: block;
+  width: fit-content;
+  height: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Inter UI;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  padding: 1px 3px;
+  margin-bottom: 5px;
+}
+
+.text {
+  color: rgba(0, 0, 0, 0.75);
+  font-family: Inter UI;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+  width: 682px;
+  margin: 0;
+  height: 60px;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.authorBox {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  right: 20px;
+  gap: 15px;
+}
+
+.authorName {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Inter UI;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
+}
+
+.date {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Inter UI;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+}

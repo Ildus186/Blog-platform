@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom"
-import { useGetArticleQuery } from "../redux/articleAPIslice"
-import styles from "./ArticlePage.module.scss"
-import { format } from "date-fns"
 import { Pagination, Spin, Empty } from "antd"
+import { format } from "date-fns"
 import { useState, useEffect } from "react"
-import Avatar from "./Avatar.png"
+import { Link } from "react-router-dom"
+
 import { LikeButton } from "../Components/LikeButton"
+import { useGetArticleQuery } from "../redux/articleAPIslice"
+
+import styles from "./ArticlePage.module.scss"
+import Avatar from "./Avatar.png"
 
 const ArticlePage = () => {
   const [offset, setOffset] = useState(0)

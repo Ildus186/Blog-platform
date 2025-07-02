@@ -1,16 +1,14 @@
 import "./App.css"
 import { Routes, Route, Navigate } from "react-router-dom"
 
-import { ArticlePage } from "./pages/ArticlePage"
-import { SinglePage } from "./pages/SinglePage"
-import { CreateEditArticlePage } from "./pages/CreateEditArticlePage"
-import { SigninPage } from "./pages/SigninPage"
-import { LoginPage } from "./pages/LoginPage"
-import { EditprofilePage } from "./pages/EditprofilePage"
-
 import { Layout } from "./Components/Layout"
-
 import { RequireAuth } from "./hoc/RequireAuth"
+import { ArticlePage } from "./pages/ArticlePage"
+import { CreateEditArticlePage } from "./pages/CreateEditArticlePage"
+import { EditprofilePage } from "./pages/EditprofilePage"
+import { LoginPage } from "./pages/LoginPage"
+import { SigninPage } from "./pages/SigninPage"
+import { SinglePage } from "./pages/SinglePage"
 
 function App() {
   return (

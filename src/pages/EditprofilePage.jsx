@@ -1,9 +1,11 @@
-import { useForm } from "react-hook-form"
 import { Alert } from "antd"
 import { useEffect } from "react"
-import styles from "./EditprofilePage.module.scss"
+import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
+
 import { useUpdateCurrentUserMutation, useGetCurrentUserQuery } from "../redux/articleAPIslice"
+
+import styles from "./EditprofilePage.module.scss"
 
 const EditprofilePage = () => {
   const [updateProfile, { isLoading, error }] = useUpdateCurrentUserMutation()

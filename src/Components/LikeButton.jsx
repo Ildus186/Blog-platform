@@ -1,8 +1,10 @@
-import { useToggleLikeMutation } from "../redux/articleAPIslice"
-import styles from "./LikeButton.module.scss"
 import { HeartFilled } from "@ant-design/icons"
-import { selectInitialized } from "../redux/authSlice"
 import { useSelector } from "react-redux"
+
+import { useToggleLikeMutation } from "../redux/articleAPIslice"
+import { selectInitialized } from "../redux/authSlice"
+
+import styles from "./LikeButton.module.scss"
 
 const LikeButton = ({ articleId, isLiked, refetch }) => {
   const [toggleLike] = useToggleLikeMutation()

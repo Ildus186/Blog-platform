@@ -1,9 +1,11 @@
+import { useSelector, useDispatch } from "react-redux"
 import { Outlet, Link } from "react-router-dom"
-import styles from "./Layout.module.scss"
+
 import Avatar from "../pages/Avatar.png"
 import { useGetCurrentUserQuery } from "../redux/articleAPIslice"
 import { logout, selectCurrentUser, selectInitialized } from "../redux/authSlice"
-import { useSelector, useDispatch } from "react-redux"
+
+import styles from "./Layout.module.scss"
 
 const Layout = () => {
   const dispatch = useDispatch()

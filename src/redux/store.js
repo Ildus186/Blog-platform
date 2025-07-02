@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
+
 import { articleApi } from "./articleAPIslice"
 import authReducer from "./authSlice"
 

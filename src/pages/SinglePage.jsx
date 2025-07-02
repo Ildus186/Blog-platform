@@ -1,14 +1,16 @@
-import { useParams, Link, useNavigate } from "react-router-dom"
-import { useGetSingleArticleQuery, useDeleteArticleMutation } from "../redux/articleAPIslice"
-import { Spin, Popconfirm, Modal } from "antd"
+import { Spin, Popconfirm, Modal, Empty } from "antd"
 import { format } from "date-fns"
-import styles from "./SinglePage.module.scss"
-import Avatar from "./Avatar.png"
-import ReactMarkdown from "react-markdown"
-import { selectCurrentUser } from "../redux/authSlice"
-import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
+import ReactMarkdown from "react-markdown"
+import { useSelector } from "react-redux"
+import { useParams, Link, useNavigate } from "react-router-dom"
+
 import { LikeButton } from "../Components/LikeButton"
+import { useGetSingleArticleQuery, useDeleteArticleMutation } from "../redux/articleAPIslice"
+import { selectCurrentUser } from "../redux/authSlice"
+
+import Avatar from "./Avatar.png"
+import styles from "./SinglePage.module.scss"
 
 const SinglePage = () => {
   const { slug } = useParams()

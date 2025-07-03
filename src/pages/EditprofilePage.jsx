@@ -33,12 +33,14 @@ const EditprofilePage = () => {
 
   const onSubmit = async (formData) => {
     try {
-      await updateProfile({
-        email: formData.email,
-        username: formData.username,
-        image: formData.avatar,
-        password: formData.new_password,
-      }).unwrap()
+      const requestBody = {
+        ...(formData.email && { email: formData.email }),
+        ...(formData.username && { username: formData.username }),
+        ...(formData.avatar && { image: formData.avatar }),
+        ...(formData.new_password && { password: formData.new_password }),
+      }
+      await updateProfile(requestBody).unwrap()
+      console.log("Request body:", requestBody)
       refetch()
       navigate("/")
     } catch (error) {
@@ -57,7 +59,6 @@ const EditprofilePage = () => {
             type="text"
             placeholder="Username"
             {...register("username", {
-              required: "Username is required",
               minLength: {
                 value: 3,
                 message: "Username must be at least 3 characters",
@@ -78,7 +79,6 @@ const EditprofilePage = () => {
             type="email"
             placeholder="Email address"
             {...register("email", {
-              required: "Email is required",
               pattern: {
                 value: /^[a-z][a-z0-9._%+-]*@[a-z0-9.-]+\.[a-z]{2,}$/i,
                 message: "Invalid email address",
@@ -95,7 +95,6 @@ const EditprofilePage = () => {
             type="password"
             placeholder="New password"
             {...register("new_password", {
-              required: "Password is required",
               minLength: {
                 value: 6,
                 message: "Your password needs to be at least 6 characters.",
@@ -116,7 +115,6 @@ const EditprofilePage = () => {
             type="text"
             placeholder="Avatar image"
             {...register("avatar", {
-              required: "URL is required",
               minLength: {
                 value: 6,
                 message: "Your url needs to be at least 6 characters.",

@@ -14,7 +14,7 @@ const Layout = () => {
 
   useGetCurrentUserQuery(undefined, { skip: !isInitialized })
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     dispatch(logout())
   }
 
@@ -31,7 +31,9 @@ const Layout = () => {
               Create article
             </Link>
             <div className={styles.header__userInfoBox}>
-              <p className={styles.header__userName}>{user.username}</p>
+              <Link to="/edit-profile">
+                <p className={styles.header__userName}>{user.username}</p>
+              </Link>
               <Link to="/edit-profile">
                 <img className={styles.avatar} src={user.image || Avatar} alt="Avatar" onError={(e) => (e.target.src = Avatar)} />
               </Link>

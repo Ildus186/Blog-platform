@@ -23,7 +23,7 @@ const LikeButton = ({ articleId, isLiked, refetch }) => {
 
   return (
     <button onClick={handleLike} className={styles.like_btn}>
-      <HeartFilled className={`${styles.heart_icon} ${isLiked ? styles.liked : ""} `} />
+      <HeartFilled className={`${styles.heart_icon} ${isInitialized && isLiked ? styles.liked : ""} `} />
     </button>
   )
 }

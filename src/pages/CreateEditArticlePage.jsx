@@ -160,7 +160,7 @@ const CreateEditArticlePage = () => {
               return (
                 <div className={styles.tagBox} key={index}>
                   <input className={styles.tagInput} type="text" defaultValue={tag} disabled />
-                  <button className={styles.deleteButton} onClick={(e) => removeTag(index)(e)}>
+                  <button type="button" className={styles.deleteButton} onClick={(e) => removeTag(index)(e)}>
                     Delete
                   </button>
                 </div>
@@ -169,10 +169,10 @@ const CreateEditArticlePage = () => {
           <div className={styles.tagBox}>
             <input className={`${styles.tagInput} ${errors.tag ? styles.error : ""}`} type="text" placeholder="Tag" {...register("tag")} />
             {errors.email && <p className={styles.errorMessage}>{errors.tag.message}</p>}
-            <button className={styles.deleteButton} onClick={cleanTag}>
+            <button type="button" className={styles.deleteButton} onClick={cleanTag}>
               Delete
             </button>
-            <button className={styles.addButton} onClick={addTag}>
+            <button type="button" className={styles.addButton} onClick={addTag}>
               Add tag
             </button>
           </div>

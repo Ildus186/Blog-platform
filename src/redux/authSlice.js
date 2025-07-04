@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-// Безопасное чтение из localStorage
 const safeParse = (key) => {
   try {
     const item = localStorage.getItem(key)
@@ -51,7 +50,6 @@ const authSlice = createSlice({
 export const { setCredentials, setLoading, logout, updateUser } = authSlice.actions
 export default authSlice.reducer
 
-// Селекторы
 export const selectCurrentUser = (state) => state.auth.user
 export const selectInitialized = (state) => state.auth.isInitialized
 export const selectCurrentToken = (state) => state.auth.token

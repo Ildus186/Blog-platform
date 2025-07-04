@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 
-import { useRegisterMutation } from "../redux/articleAPIslice"
+import { useRegisterMutation, useLoginMutation } from "../redux/articleAPIslice"
 
 import styles from "./LoginPage.module.scss"
 
@@ -26,6 +26,7 @@ const LoginPage = () => {
   const [usernameValue, setUsernameValue] = useState("")
 
   const [registerUser, { isLoading, error }] = useRegisterMutation()
+  const [loginUser] = useLoginMutation()
 
   const regErrors = error?.data?.errors || {}
 
@@ -42,7 +43,11 @@ const LoginPage = () => {
     try {
       await registerUser(data).unwrap()
       toast.success("Регистрация прошла успешно!")
-      setTimeout(() => navigate("/sign-in", { replace: true }), 2000)
+      await loginUser({
+        email: data.email,
+        password: data.password,
+      }).unwrap()
+      navigate("/", { replace: true })
     } catch (err) {
       toast.error(err.data.email || "Произошла ошибка")
       console.error("Registration failed:", err)
@@ -152,7 +157,7 @@ const LoginPage = () => {
           </label>
         </div>
 
-        <button className={styles.submit} type="submit" disabled={Object.keys(errors).length > 0}>
+        <button className={styles.submit} type="submit" disabled={isLoading}>
           {isLoading ? "Loading..." : "Create"}
         </button>
       </form>

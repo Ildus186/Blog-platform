@@ -1,7 +1,7 @@
 import { Pagination, Spin, Empty } from "antd"
 import { format } from "date-fns"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 
 import { LikeButton } from "../Components/LikeButton"
 import { useGetArticleQuery } from "../redux/articleAPIslice"
@@ -10,8 +10,10 @@ import styles from "./ArticlePage.module.scss"
 import Avatar from "./Avatar.png"
 
 const ArticlePage = () => {
+  const [searchParams, setSearchParams] = useSearchParams()
   const [offset, setOffset] = useState(0)
-  const [currentPage, setCurrentPage] = useState(1)
+  const initialPage = parseInt(searchParams.get("page")) || 1
+  const [currentPage, setCurrentPage] = useState(initialPage)
 
   const { data = [], isLoading, isError, refetch } = useGetArticleQuery(offset)
 
@@ -25,6 +27,7 @@ const ArticlePage = () => {
 
   const changePage = (page) => {
     setCurrentPage(page)
+    setSearchParams({ page: page.toString() })
   }
 
   const changeDate = (text) => {

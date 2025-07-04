@@ -1,7 +1,18 @@
-.loginBox {
+.smallHeight {
+  min-height: 374px;
+}
+
+.averageHeight {
+  min-height: 498px;
+}
+
+.bigHeight {
+  min-height: 599px;
+}
+
+.box {
   margin: 50px auto 0 auto;
   width: 384px;
-  min-height: 599px;
   background-color: white;
   padding: 48px 32px;
   box-sizing: border-box;

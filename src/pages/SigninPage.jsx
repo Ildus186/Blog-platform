@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom"
 
 import { useLoginMutation } from "../redux/articleAPIslice"
 
-import styles from "./SigninPage.module.scss"
+import styles from "./Forma.module.scss"
 
 const SigninPage = () => {
   const [login, { isLoading, error }] = useLoginMutation()
@@ -46,7 +46,7 @@ const SigninPage = () => {
   }
 
   return (
-    <div className={styles.loginBox}>
+    <div className={`${styles.box} ${styles.smallHeight}`}>
       <h1 className={styles.title}>Sign In</h1>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <label className={styles.inputLabel}>

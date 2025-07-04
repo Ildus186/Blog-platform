@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 import { useUpdateCurrentUserMutation, useGetCurrentUserQuery } from "../redux/articleAPIslice"
 
-import styles from "./EditprofilePage.module.scss"
+import styles from "./Forma.module.scss"
 
 const EditprofilePage = () => {
   const [updateProfile, { isLoading, error }] = useUpdateCurrentUserMutation()
@@ -49,7 +49,7 @@ const EditprofilePage = () => {
   }
 
   return (
-    <div className={styles.loginBox}>
+    <div className={`${styles.box} ${styles.averageHeight}`}>
       <h1 className={styles.title}>Edit profile</h1>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <label className={styles.inputLabel}>

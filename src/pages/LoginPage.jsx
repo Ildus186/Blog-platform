@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify"
 
 import { useRegisterMutation, useLoginMutation } from "../redux/articleAPIslice"
 
-import styles from "./LoginPage.module.scss"
+import styles from "./Forma.module.scss"
 
 import "react-toastify/dist/ReactToastify.css"
 
@@ -56,7 +56,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div className={styles.loginBox}>
+    <div className={`${styles.box} ${styles.bigHeight}`}>
       <ToastContainer position="top-right" autoClose={2000} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
       <h1 className={styles.title}>Create new account</h1>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>

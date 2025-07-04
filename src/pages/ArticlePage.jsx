@@ -19,7 +19,8 @@ const ArticlePage = () => {
 
   useEffect(() => {
     setOffset((currentPage - 1) * 5)
-  }, [currentPage])
+    setSearchParams({ page: currentPage.toString() })
+  }, [currentPage, setSearchParams])
 
   useEffect(() => {
     refetch()
